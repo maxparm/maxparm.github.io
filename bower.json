@@ -1,0 +1,21 @@
+{
+  "name": "maxparm.github.io",
+  "version": "0.0.0",
+  "homepage": "http://www.maximeparmentier.com",
+  "authors": [
+    "Maxime Parmentier <parmentier.maxime@gmail.com>"
+  ],
+  "keywords": [
+    "Maxime",
+    "Parmentier"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

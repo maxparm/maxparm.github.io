@@ -1,0 +1,24 @@
+.content {
+    padding:40px;
+    color:#555;
+    font-size:14px;
+}
+.content h1 {
+    color:#111;
+    font-size:30px;
+    font-weight:300;
+    margin-bottom:0;
+}
+.content a, .content a:hover {
+    color:#2980b9;
+}
+.content .description {
+    font-weight:300;
+    font-style:italic;
+    color:#aaa;
+    font-size:13px;
+}
+.content .description a {
+    color:#777;
+    text-decoration:none;
+}
