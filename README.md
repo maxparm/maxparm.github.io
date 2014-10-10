@@ -1,4 +1,6 @@
-maxparm.github.io
-=================
+# Maxime Parmentier
 
-Personal website
+
+* [Codex Vitae](/codex-vitae/README.md)
+
+
