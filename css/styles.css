@@ -3,22 +3,59 @@
     color:#555;
     font-size:14px;
 }
-.content h1 {
-    color:#111;
-    font-size:30px;
-    font-weight:300;
-    margin-bottom:0;
+.content a {
+    text-decoration:none;
 }
-.content a, .content a:hover {
-    color:#2980b9;
+.content a:hover {
+    text-decoration:underline;
 }
 .content .description {
     font-weight:300;
-    font-style:italic;
-    color:#aaa;
-    font-size:13px;
+    color:#777;
+    font-size:14px;
 }
 .content .description a {
     color:#777;
+}
+h1 {
+    color:#111;
+    font-size:36px;
+    font-weight:500;
+    letter-spacing: -2px;
+    margin-bottom:0;
+    text-transform: uppercase;
+}
+h2 {
+    color:#111;
+    font-size:18px;
+    text-transform:capitalize;
+    font-weight:500;
+    letter-spacing: -1px;
+    margin:40px 0 5px;
+}
+
+
+.content ul {
+    margin:0 0 0 25px;
+    padding:0;
+}
+.content li {
+    margin:0 5px;
+    padding: 0;
+}
+.content li a {
     text-decoration:none;
+    color:#777;
+}
+
+/* ---------------------------------- *\
+    INSTAFEED
+\* ---------------------------------- */
+.instafeed-list {
+    height:150px;
+    overflow:hidden;
+}
+.instafeed-list a {
+    margin:0 10px 10px 0;
+    float:left;
 }
