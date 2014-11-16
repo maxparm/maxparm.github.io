@@ -1,5 +1,5 @@
 .content {
-    padding:40px;
+    padding:30px 40px;
     color:#555;
     font-size:14px;
 }
@@ -13,25 +13,36 @@
     font-weight:300;
     color:#777;
     font-size:14px;
+    line-height:23px;
+    margin:0 0 40px;
 }
 .content .description a {
     color:#777;
+    text-decoration:underline;
 }
 h1 {
     color:#111;
     font-size:36px;
     font-weight:500;
     letter-spacing: -2px;
-    margin-bottom:0;
+    margin:0 0 5px;
     text-transform: uppercase;
 }
 h2 {
     color:#111;
     font-size:18px;
+    line-height:20px;
     text-transform:capitalize;
     font-weight:500;
     letter-spacing: -1px;
-    margin:40px 0 5px;
+    margin:40px 0 10px;
+}
+h2 span  {
+    letter-spacing: 0;
+    line-height:20px;
+    color:#777;
+    font-weight:300;
+    /*font-size:12px;*/
 }
 
 

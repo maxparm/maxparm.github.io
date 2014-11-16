@@ -17,29 +17,31 @@ $(function () {
 
 
     // Runkeeper Feed
-    var feed = window.Feed;
-    var renderRunkeeperFeed = function (posts) {
-        ul = $('.runkeeper-list')
-        posts.feed.entries.forEach(function (element, index) {
-            ul.append('<li><a target="_blank" href="' + element.link + '">' + element.title + '</a></li>');
+    $.get('http://services.iamnerdwin.com/runkeeper/feed/v2/1162026').done(function (rss) {
+        ul = $('.runkeeper-list');
+        $(rss).find("item").each(function (i, el) {
+            if (i > 7) return;
+            ul.append('<li><a target="_blank" href="' + $('link', el).text() + '">' + $('title', el).text() + '</a></li>');
         });
-    };
-    f1 = window.Feed({
-        url: 'http://services.iamnerdwin.com/runkeeper/feed/v2/1162026',
-        callback: renderRunkeeperFeed
     });
 
 
     // Medium Feed
-    // var renderMediumFeed = function (posts) {
-    //     ul = $('.medium-list')
-    //     posts.feed.entries.forEach(function (element, index) {
-    //         console.log(element);
-    //         ul.append('<li><a target="_blank" href="' + element.link + '">' + element.title + '</a></li>');
-    //     });
-    // };
-    // f2 = window.Feed({
-    //     url: 'https://medium.com/feed/@maxparm/',
-    //     callback: renderMediumFeed
-    // });
+    $.get('http://medium.com/feed/@maxparm').done(function (rss) {
+        ul = $('.medium-list');
+        $(rss).find("item").each(function (i, el) {
+            if (i > 7) return;
+            ul.append('<li><a target="_blank" href="' + $('link', el).text() + '">' + $('title', el).text() + '</a></li>');
+        });
+    });
+
+
+    // Blog Feed
+    $.get('http://maxparm.postach.io/feed.xml').done(function (rss) {
+        ul = $('.blog-list');
+        $(rss).find("entry").each(function (i, el) {
+            if (i > 7) return;
+            ul.append('<li><a target="_blank" href="' + $('link', el).attr('href') + '">' + $('title', el).text() + '</a></li>');
+        });
+    });
 });
