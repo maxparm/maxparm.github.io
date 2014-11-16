@@ -27,21 +27,27 @@ $(function () {
 
 
     // Medium Feed
-    $.get('http://medium.com/feed/@maxparm').done(function (rss) {
+    $.ajax({
+        url: 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=100&q=http://medium.com/feed/@maxparm',
+        dataType: 'jsonp'
+    }).done(function (r) {
         ul = $('.medium-list');
-        $(rss).find("item").each(function (i, el) {
+        _.each(r.responseData.feed.entries, function (e, i) {
             if (i > 7) return;
-            ul.append('<li><a target="_blank" href="' + $('link', el).text() + '">' + $('title', el).text() + '</a></li>');
+            ul.append('<li><a target="_blank" href="' + e.link + '">' + e.title + '</a></li>');
         });
     });
 
 
     // Blog Feed
-    $.get('http://maxparm.postach.io/feed.xml').done(function (rss) {
+    $.ajax({
+        url: 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=100&q=http://feeds.feedburner.com/postach/KgzK',
+        dataType: 'jsonp'
+    }).done(function (r) {
         ul = $('.blog-list');
-        $(rss).find("entry").each(function (i, el) {
+        _.each(r.responseData.feed.entries, function (e, i) {
             if (i > 7) return;
-            ul.append('<li><a target="_blank" href="' + $('link', el).attr('href') + '">' + $('title', el).text() + '</a></li>');
+            ul.append('<li><a target="_blank" href="' + e.link + '">' + e.title + '</a></li>');
         });
     });
 });
