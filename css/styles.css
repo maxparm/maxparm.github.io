@@ -37,6 +37,10 @@ h2 {
     letter-spacing: -1px;
     margin:40px 0 10px;
 }
+h2 a {
+    color:#111;
+    text-decoration:none;
+}
 h2 span  {
     letter-spacing: 0;
     line-height:20px;
