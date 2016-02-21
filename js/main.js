@@ -12,6 +12,19 @@ $(function () {
     // });
 
 
+    // Tumblr Feed
+    $.ajax({
+        url: 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=100&q=http://maxparm.tumblr.com/rss',
+        dataType: 'jsonp'
+    }).done(function (r) {
+        ul = $('.tumblr-list');
+        _.each(r.responseData.feed.entries, function (e, i) {
+            if (i > 7) return;
+            ul.append('<li><a target="_blank" href="' + e.link + '">' + e.title + ' <span>on ' + moment(e.publishedDate).format('llll') + '</span></a></li>');
+        });
+    });
+
+
     // Strava Feed
     $.ajax({
         url: 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=100&q=http://feedmyride.net/rides/585974',
@@ -20,7 +33,8 @@ $(function () {
         ul = $('.strava-list');
         _.each(r.responseData.feed.entries, function (e, i) {
             if (i > 7) return;
-            ul.append('<li><a target="_blank" href="' + e.link + '">' + e.title + ' <span>on ' + moment(e.publishedDate).format('llll') + '</span></a></li>');
+            var sport = e.content.split(':')[0];
+            ul.append('<li><a target="_blank" href="' + e.link + '">' + sport + ': ' + e.title + ' <span>on ' + moment(e.publishedDate).format('llll') + '</span></a></li>');
         });
     });
 
