@@ -41,7 +41,7 @@ $(function () {
 
     // 7:36pm Feed
     $.ajax({
-        url: 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=100&q=http://iconosquare.com/feed/maxparm',
+        url: 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=100&q=https://api.flickr.com/services/feeds/photos_public.gne?id=50853824@N00',
         dataType: 'jsonp'
     }).done(function (r) {
         ul = $('.seventhirtysix-list');
