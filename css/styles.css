@@ -3,6 +3,15 @@
     color:#555;
     font-size:14px;
 }
+
+.content-tweets {
+    width: 30%;
+    margin-right: 10%;
+}
+.content-tweets:last-child {
+    margin: 0;
+}
+
 .content a:hover {
     text-decoration:underline;
 }
