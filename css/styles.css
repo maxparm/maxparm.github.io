@@ -5,11 +5,8 @@
 }
 
 .content-tweets {
-    width: 30%;
+    width: 40%;
     margin-right: 10%;
-}
-.content-tweets:last-child {
-    margin: 0;
 }
 
 .content a:hover {
